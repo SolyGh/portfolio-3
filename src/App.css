@@ -11,15 +11,15 @@
 #CSS Vars
 \*----------------------------------------------*/
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Jost', sans-serif;
-  font-weight: 400; 
+body {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--text-color17);
   background-color: var(--bg-color17);
@@ -194,9 +194,8 @@ img {
   opacity: 0.6;
 }
 .section17 {
-
   padding-block: 120px;
-  background-color: var(--bg-color17); 
+  background-color: var(--bg-color17);
   background-image: var(--first-gradient17);
   background-repeat: no-repeat;
   background-size: cover;
@@ -240,7 +239,6 @@ img {
 }
 
 .card17 {
-  
   background-color: var(--bg-color17);
   border-radius: 20px;
   box-shadow: var(--box-shadow17);
@@ -260,7 +258,6 @@ img {
 }
 .card__img17:hover {
   transform: scale(1.1);
-  
 }
 
 .card-one17 {
@@ -297,7 +294,7 @@ img {
 .main17 {
   background: var(--third-gradient17);
 }
- /* @media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .container17 {
     width: var(--container2-width-md);
   }
