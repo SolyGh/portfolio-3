@@ -1,0 +1,66 @@
+.services17 {
+  background-image: var(--second-gradient17);
+}
+.services__subtitle17 {
+  color: var(--title-color17);
+  font-size: var(--tiny-font-size);
+  font-weight: 700;
+  margin-bottom: 65px;
+  /* display: block; */
+}
+.services__title17 {
+  font-size: var(--h4-font-size);
+  margin-bottom: 15px;
+}
+
+.services__description17 {
+  min-height: 175px;
+  color: var(--title-color17);
+}
+.swiper__wrapper17 {
+  margin-bottom: 52px;
+}
+.services__container17 {
+  text-align: center;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  width: auto;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+.swiper-horizontal > .swiper-pagination-bullets::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(50%);
+  height: 2px;
+  width: 100%;
+  background-color: var(--title-color17);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  border: 2px solid var(--title-color17);
+  background-color: var(--container-color17);
+  z-index: 1;
+  position: relative;
+  opacity: 1;
+  margin: 0;
+  transition: all 0.3 var(--transition17);
+}
+
+.swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 20px;
+}
+.swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet-active {
+  background-color: var(--primary-color17);
+  width: 13px;
+  height: 13px;
+  top: 2px;
+}

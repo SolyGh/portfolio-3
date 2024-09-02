@@ -1,38 +1,316 @@
-.App {
+/*----------------------------------------------*\
+
+
+#Google Fonts
+\*----------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+/*----------------------------------------------*\
+
+
+#CSS Vars
+\*----------------------------------------------*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Jost', sans-serif;
+  font-weight: 400; 
+  line-height: 1.5;
+  color: var(--text-color17);
+  background-color: var(--bg-color17);
+  overflow-x: hidden;
+  transition: all 0.5s ease;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+:root {
+  /**
+*colors 
+*/
+  --primary-color17: hsl(165, 60%, 40%);
+  --title-color17: hsl(0, 0%, 100%);
+  --text-color17: (hsl90, 0%, 92%);
+  --bg-color17: hsl(216, 18%, 16%);
+  --bg-color-alt17: hsl(213, 10%, 21%);
+  --container-color17: hsl(217, 18%, 14%);
+  --border-color17: hsl(210, 2%, 65%);
+  --first-gradient17: linear-gradient(
+    0deg,
+    var(--bg-color-alt17) 0%,
+    var(--bg-color17) 100%
+  );
+  --skills-color17: rgba(255, 255, 255, 0.2);
+  --second-gradient17: linear-gradient(
+    180deg,
+    var(--bg-color-alt17) 0%,
+    var(--bg-color17) 100%
+  );
+  --third-gradient17: linear-gradient(
+    180deg,
+    var(--bg-color17) 0%,
+    var(--bg-color17) 100%
+  );
+
+  /**
+* typography 
+*/
+
+  --body-font17: "Jost", sans-serif;
+  --second-font17: "Caveat", cursive;
+
+  --biggest-font-size17: 90px;
+  --h1-font-size17: 44px;
+  --h2-font-size17: 30px;
+  --h3-font-size17: 28px;
+  --h4-font-size17: 24px;
+  --h5-font-size17: 22px;
+  --largest-font-size17: 21px;
+  --large-font-size17: 20px;
+  --normal-font-size17: 16px;
+  --small-font-size17: 15px;
+  --smaller-font-size17: 14px;
+  --tiny-font-size17: 13px;
+
+  /**
+* shadow 
+*/
+
+  --box-shadow17: 5px 5px rgba(255, 255, 255, 0.1);
+  /**
+* transition
+*/
+  --transition17: cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+/*----------------------------------------------*\
+
+
+#Reset
+\*----------------------------------------------*/
+
+button,
+input {
+  font-family: var(--body-font17);
+  font-size: var(--normal-font-size17);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color17);
+  font-weight: 700;
+}
+ul {
+  list-style: none;
+}
+p {
+  line-height: 1.7;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+button {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+
+/*----------------------------------------------*\
+
+
+#Reusable Css Classes
+\*----------------------------------------------*/
+
+.container17 {
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+
+.grid17 {
+  display: grid;
+  gap: 24px;
+}
+
+.text-cs17 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--title-color17);
+}
+.btn17,
+.hero__link17 {
+  color: var(--title-color17);
+  font-size: var(--tiny-font-size17);
+  font-weight: 700;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn17 {
+  border: 2px solid var(--border-color17);
+  padding-inline: 40px;
+  border-radius: 56px;
+  box-shadow: var(--box-shadow17);
+}
+.btn17::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: var(--primary-color17);
+  border-radius: inherit;
+  transform: scale(0.3);
+  filter: blur(10px);
+  opacity: 0;
+  transition: all 0.7s var(--transition17);
+  z-index: -1;
+}
+.btn17:hover::before {
+  transform: scale(1);
+  filter: blur(0);
+  opacity: 1;
+}
+.shape17 {
+  position: absolute;
+  filter: invert(1);
+  opacity: 0.6;
+}
+.section17 {
+
+  padding-block: 120px;
+  background-color: var(--bg-color17); 
+  background-image: var(--first-gradient17);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.section17::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-color17);
+  background-image: var(--second-gradient17);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+}
+
+.section__title17,
+.section__subtitle17 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section__title17 {
+  font-size: var(--h1-font-size17);
+}
+.section__subtitle17 {
+  color: var(--primary-color17);
+  font-size: var(--small-font-size17);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.section__subtitle17 span {
+  font-family: var(--second-font17);
+  color: var(--title-color17);
+  font-size: var(--h3-font-size17);
+  text-transform: capitalize;
+  margin-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card17 {
+  
+  background-color: var(--bg-color17);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow17);
+  overflow: hidden;
+  border: 2px solid var(--border-color17);
+  transition: all 0.5s var(--transition17);
+}
+.card17:hover {
+  border-color: transparent;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+.card__img17 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s var(--transition17);
+}
+.card__img17:hover {
+  transform: scale(1.1);
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.card-one17 {
+  padding: 30px 35px;
+  border-radius: 18px;
+}
+
+.link17 {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--title-color17);
+  font-weight: 700;
+}
+.link__icon17 {
+  color: var(--primary-color17);
+  margin-left: 20px;
+  transition: all 0.3s var(--transition17);
+}
+.link17:hover .link__icon {
+  margin-left: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.c__shape17 {
+  right: -24px;
+  bottom: -24px;
+  width: 141px;
+  height: 141px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main17 {
+  background: var(--third-gradient17);
+}
+ /* @media screen and (max-width: 1024px) {
+  .container17 {
+    width: var(--container2-width-md);
   }
-  to {
-    transform: rotate(360deg);
+  .section17 {
+   
   }
 }
+ 
+@media screen and (max-width: 600px) {
+  .main17 {
+    background-color: var(--second-gradient17);
+  }
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
